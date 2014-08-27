@@ -36,4 +36,8 @@ public class EditarNotaViewModel {
 		
 	}
 
+	public void cerrar(EditarNotaView editarNotaView) {
+		editarNotaView.close();
+	}
+
 }
