@@ -6,6 +6,12 @@ import java.util.List;
 public class MateriasHome {
 	private static MateriasHome instance;
 	private List<Materia> materias = new ArrayList<Materia>();
+	
+	public MateriasHome() {
+		this.add(new Materia("fisica"));
+		this.add(new Materia("diseño"));
+		this.add(new Materia("analisis"));
+	}
 
 	public static synchronized MateriasHome getInstance() {
 		if (instance == null) {
