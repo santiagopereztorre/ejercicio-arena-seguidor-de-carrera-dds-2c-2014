@@ -3,8 +3,6 @@ package domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.uqbar.edu.paiu.examples.celulares.domain.Celular;
-
 public class MateriasHome {
 	private static MateriasHome instance;
 	private List<Materia> materias = new ArrayList<Materia>();
