@@ -2,27 +2,29 @@ package ui;
 
 import org.uqbar.arena.layout.*;
 import org.uqbar.arena.widgets.*;
-import org.uqbar.arena.windows.MainWindow;
+import org.uqbar.arena.windows.Window;
+import org.uqbar.arena.windows.WindowOwner;
 
-//IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-public class NuevaMateriaView extends MainWindow<NuevaMateriaViewModel> {
+public class NuevaMateriaView extends Window<NuevaMateriaViewModel> {
 
-  public NuevaMateriaView() {
-	  super(new NuevaMateriaViewModel());
-  }
+	public NuevaMateriaView(WindowOwner parent) {
+		super(parent, new NuevaMateriaViewModel());
+	}
 
-  @Override
-  public void createContents(Panel mainPanel) {
+	@Override
+	public void createContents(Panel mainPanel) {
 	  
-	  Panel primerPanel = new Panel(mainPanel);
-	  primerPanel.setLayout(new HorizontalLayout());
+		Panel primerPanel = new Panel(mainPanel);
+		primerPanel.setLayout(new HorizontalLayout());
 	  
-	  new Label(primerPanel).setText("Nombre:");
-	  new TextBox(primerPanel).bindValueToProperty("nombre");
-	  new Button(mainPanel).setCaption("Aceptar").onClick(() -> getModelObject().crear());
-  }
+		new Label(primerPanel).setText("Nombre:");
+		new TextBox(primerPanel).bindValueToProperty("nombre");
+		new Button(mainPanel).setCaption("Aceptar")
+			.onClick(() -> this.aceptar());
+	}
 
-  public static void main(String[] args) {
-    new NuevaMateriaView().startApplication();
-  }
+	private void aceptar() {
+//		getModelObject().crear(); 
+		getModelObject().cerrar(this);
+	}
 }
