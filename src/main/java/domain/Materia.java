@@ -6,4 +6,8 @@ public class Materia {
 	public Materia(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	public String toString() {
+		return nombre;
+	}
 }
