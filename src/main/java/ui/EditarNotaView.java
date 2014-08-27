@@ -2,13 +2,14 @@ package ui;
 
 import org.uqbar.arena.layout.*;
 import org.uqbar.arena.widgets.*;
-import org.uqbar.arena.windows.MainWindow;
+import org.uqbar.arena.windows.Window;
+import org.uqbar.arena.windows.WindowOwner;
 
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-public class EditarNotaView extends MainWindow<EditarNotaViewModel> {
+public class EditarNotaView extends Window<EditarNotaViewModel> {
 
-  public EditarNotaView() {
-    super(new EditarNotaViewModel());
+  public EditarNotaView(WindowOwner parent) {
+    super(parent, new EditarNotaViewModel());
   }
 
   @Override
@@ -28,9 +29,5 @@ public class EditarNotaView extends MainWindow<EditarNotaViewModel> {
 	  new CheckBox(tercerPanel).bindValueToProperty("aprobado");
 	  new Label(tercerPanel).setText("Aprobado");
 	  new Button(mainPanel).setCaption("Aceptar").onClick(() -> getModelObject().editar());
-  }
-
-  public static void main(String[] args) {
-    new EditarNotaView().startApplication();
   }
 }
