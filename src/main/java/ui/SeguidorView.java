@@ -13,10 +13,10 @@ import org.uqbar.arena.windows.MainWindow;
 import domain.UnModel;
 
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-public class SeguidorView extends MainWindow<UnViewModel> {
+public class SeguidorView extends MainWindow<SeguidorViewModel> {
 
   public SeguidorView() {
-    super(new UnViewModel(new UnModel()));
+    super(new SeguidorViewModel());
   }
 
   @Override
@@ -29,8 +29,8 @@ public class SeguidorView extends MainWindow<UnViewModel> {
 
 	  new Label(primerPanel).setText("Seguidor de carrera");
 	  new Label(segundoPanel).setText("Materias");
-	  new List(segundoPanel);
-	  new Button(segundoPanel).setCaption("Nueva materia");
+	  new List<String>(segundoPanel);
+	  new Button(segundoPanel).setCaption("Nueva materia").onClick(() -> getModelObject().navegar());
   }
 
   public static void main(String[] args) {
