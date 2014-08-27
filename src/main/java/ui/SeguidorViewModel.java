@@ -6,11 +6,12 @@ import org.uqbar.arena.windows.WindowOwner;
 import org.uqbar.commons.utils.Observable;
 
 import domain.Materia;
+import domain.MateriasHome;
 
 @Observable
 public class SeguidorViewModel {
 	
-	private List<Materia> resultados;
+	private List<Materia> resultados = MateriasHome.getInstance().getAll();
 	
 	public List<Materia> getResultados() {
 		return resultados;

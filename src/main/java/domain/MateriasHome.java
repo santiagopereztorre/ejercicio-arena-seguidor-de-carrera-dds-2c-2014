@@ -21,4 +21,10 @@ public class MateriasHome {
 	public void delete(Materia materia) {
 		this.materias.remove(materia);
 	}
+
+	public List<Materia> getAll() {
+		List<Materia> resultado = new ArrayList<Materia>();
+		resultado.addAll(materias);
+		return resultado;
+	}
 }
