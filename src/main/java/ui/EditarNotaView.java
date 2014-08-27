@@ -24,7 +24,7 @@ public class EditarNotaView extends MainWindow<EditarNotaViewModel> {
 	  new Label(primerPanel).setText("Fecha:");
 	  new TextBox(primerPanel).bindValueToProperty("fecha");
 	  new Label(segundoPanel).setText("Descripcion:");
-	  new TextBox(segundoPanel).bindValueToProperty("descripcion");
+	  new TextBox(segundoPanel).bindValueToProperty("fecha");
 	  new CheckBox(tercerPanel).bindValueToProperty("aprobado");
 	  new Label(tercerPanel).setText("Aprobado");
 	  new Button(mainPanel).setCaption("Aceptar").onClick(() -> getModelObject().editar());
