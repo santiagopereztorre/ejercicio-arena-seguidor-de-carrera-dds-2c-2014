@@ -4,13 +4,11 @@ import org.uqbar.arena.layout.*;
 import org.uqbar.arena.widgets.*;
 import org.uqbar.arena.windows.MainWindow;
 
-import domain.UnModel;
-
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-public class NuevaMateriaView extends MainWindow<UnViewModel> {
+public class NuevaMateriaView extends MainWindow<NuevaMateriaViewModel> {
 
   public NuevaMateriaView() {
-    super(new UnViewModel(new UnModel()));
+	  super(new NuevaMateriaViewModel());
   }
 
   @Override
@@ -20,8 +18,8 @@ public class NuevaMateriaView extends MainWindow<UnViewModel> {
 	  primerPanel.setLayout(new HorizontalLayout());
 	  
 	  new Label(primerPanel).setText("Nombre:");
-	  new TextBox(primerPanel);
-	  new Button(mainPanel).setCaption("Aceptar");
+	  new TextBox(primerPanel).bindValueToProperty("nombre");
+	  new Button(mainPanel).setCaption("Aceptar").onClick(() -> getModelObject().crear());
   }
 
   public static void main(String[] args) {
