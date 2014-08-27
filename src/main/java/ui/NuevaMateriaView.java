@@ -24,7 +24,7 @@ public class NuevaMateriaView extends Window<NuevaMateriaViewModel> {
 	}
 
 	private void aceptar() {
-//		getModelObject().crear(); 
+		getModelObject().crear(); 
 		getModelObject().cerrar(this);
 	}
 }
