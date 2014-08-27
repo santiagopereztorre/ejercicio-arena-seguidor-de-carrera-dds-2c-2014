@@ -2,6 +2,9 @@ package ui;
 
 import org.uqbar.commons.utils.Observable;
 
+import domain.Materia;
+import domain.MateriasHome;
+
 @Observable
 public class NuevaMateriaViewModel {
 	private String nombre;
@@ -15,6 +18,6 @@ public class NuevaMateriaViewModel {
 	}
 	
 	public void crear() {
-		
+		MateriasHome.add(new Materia(nombre));
 	}
 }
