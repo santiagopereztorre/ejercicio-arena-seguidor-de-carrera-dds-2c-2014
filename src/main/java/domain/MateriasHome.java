@@ -1,10 +1,11 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MateriasHome {
 	private static MateriasHome instance;
-	private static ArrayList<Materia> materias;
+	private List<Materia> materias = new ArrayList<Materia>();
 	
 	public static synchronized MateriasHome getInstance() {
 		if (instance == null) {
@@ -13,7 +14,7 @@ public class MateriasHome {
 		return instance;
 	}
 	
-	public static void add(Materia materia){
+	public void add(Materia materia){
 		materias.add(materia);
 	}
 }
