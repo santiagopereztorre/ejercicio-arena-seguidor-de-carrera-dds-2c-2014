@@ -18,7 +18,7 @@ public class NuevaMateriaViewModel {
 	}
 	
 	public void crear() {
-		MateriasHome.add(new Materia(nombre));
+		MateriasHome.getInstance().add(materia);
 	}
 
 	public void cerrar(NuevaMateriaView nuevaMateriaView) {
