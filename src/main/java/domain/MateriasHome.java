@@ -3,14 +3,14 @@ package domain;
 import java.util.ArrayList;
 
 public class MateriasHome {
-
+	private static MateriasHome instance;
 	private static ArrayList<Materia> materias;
 	
-	public ArrayList<Materia> getInstance() {
-		if (materias == null) {
-			materias = new ArrayList<Materia>();
+	public static synchronized MateriasHome getInstance() {
+		if (instance == null) {
+			instance = new MateriasHome();
 		}
-		return materias;
+		return instance;
 	}
 	
 	public static void add(Materia materia){
