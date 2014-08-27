@@ -26,7 +26,7 @@ public class SeguidorView extends SimpleWindow<SeguidorViewModel> {
 
 		new Label(primerPanel).setText("Seguidor de carrera");
 		new Label(segundoPanel).setText("Materias");
-		new List<String>(segundoPanel);
+		new List<String>(segundoPanel).bindItemsToProperty("resultados");
 		new Button(segundoPanel).setCaption("Nueva materia").onClick(
 				() -> getModelObject().navegar(this));
 	}
