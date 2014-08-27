@@ -4,13 +4,11 @@ import org.uqbar.arena.layout.*;
 import org.uqbar.arena.widgets.*;
 import org.uqbar.arena.windows.MainWindow;
 
-import domain.UnModel;
-
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
-public class EditarNotaView extends MainWindow<UnViewModel> {
+public class EditarNotaView extends MainWindow<EditarNotaViewModel> {
 
   public EditarNotaView() {
-    super(new UnViewModel(new UnModel()));
+    super(new EditarNotaViewModel());
   }
 
   @Override
@@ -24,12 +22,12 @@ public class EditarNotaView extends MainWindow<UnViewModel> {
 	  tercerPanel.setLayout(new HorizontalLayout());
 	  
 	  new Label(primerPanel).setText("Fecha:");
-	  new TextBox(primerPanel);
+	  new TextBox(primerPanel).bindValueToProperty("fecha");
 	  new Label(segundoPanel).setText("Descripcion:");
-	  new TextBox(segundoPanel);
-	  new CheckBox(tercerPanel);
+	  new TextBox(segundoPanel).bindValueToProperty("descripcion");
+	  new CheckBox(tercerPanel).bindValueToProperty("aprobado");
 	  new Label(tercerPanel).setText("Aprobado");
-	  new Button(mainPanel).setCaption("Aceptar");
+	  new Button(mainPanel).setCaption("Aceptar").onClick(() -> getModelObject().editar());
   }
 
   public static void main(String[] args) {
