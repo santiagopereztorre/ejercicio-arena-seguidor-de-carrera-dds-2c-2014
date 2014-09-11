@@ -4,7 +4,6 @@ import org.uqbar.commons.utils.Observable;
 
 import domain.Materia;
 import domain.MateriasHome;
-import domain.MateriasHomeComun;
 
 @Observable
 public class NuevaMateriaViewModel {
