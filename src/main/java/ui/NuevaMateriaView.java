@@ -5,6 +5,7 @@ import org.uqbar.arena.widgets.*;
 import org.uqbar.arena.windows.Window;
 import org.uqbar.arena.windows.WindowOwner;
 
+@SuppressWarnings("serial")
 public class NuevaMateriaView extends Window<NuevaMateriaViewModel> {
 
 	public NuevaMateriaView(WindowOwner parent) {

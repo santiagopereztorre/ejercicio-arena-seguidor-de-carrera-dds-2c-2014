@@ -6,6 +6,7 @@ import org.uqbar.arena.windows.Window;
 import org.uqbar.arena.windows.WindowOwner;
 
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
+@SuppressWarnings("serial")
 public class EditarNotaView extends Window<EditarNotaViewModel> {
 
 	public EditarNotaView(WindowOwner parent) {

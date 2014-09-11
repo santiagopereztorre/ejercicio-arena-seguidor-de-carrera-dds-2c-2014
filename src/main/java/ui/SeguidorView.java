@@ -10,6 +10,7 @@ import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
 //IMPORTANTE: correr con -Djava.system.class.loader=com.uqbar.apo.APOClassLoader
+@SuppressWarnings("serial")
 public class SeguidorView extends SimpleWindow<SeguidorViewModel> {
 
 	public SeguidorView(WindowOwner parent) {
