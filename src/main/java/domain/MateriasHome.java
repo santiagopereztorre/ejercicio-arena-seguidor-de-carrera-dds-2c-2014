@@ -1,18 +1,28 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.apache.commons.collections15.Predicate;
+import org.uqbar.commons.model.CollectionBasedHome;
 
-public class MateriasHome {
+public class MateriasHome extends CollectionBasedHome<Materia> {
+
 	private static MateriasHome instance;
-	private List<Materia> materias = new ArrayList<Materia>();
-	
-	public MateriasHome() {
-		this.add(new Materia("fisica"));
-		this.add(new Materia("diseño"));
-		this.add(new Materia("analisis"));
+
+	@Override
+	public Class<Materia> getEntityType() {
+		return Materia.class;
 	}
 
+	@Override
+	public Materia createExample() {
+		return new Materia();
+	}
+
+	@Override
+	protected Predicate<Materia> getCriterio(Materia example) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public static synchronized MateriasHome getInstance() {
 		if (instance == null) {
 			instance = new MateriasHome();
@@ -20,17 +30,4 @@ public class MateriasHome {
 		return instance;
 	}
 
-	public void add(Materia materia) {
-		materias.add(materia);
-	}
-
-	public void delete(Materia materia) {
-		this.materias.remove(materia);
-	}
-
-	public List<Materia> getAll() {
-		List<Materia> resultado = new ArrayList<Materia>();
-		resultado.addAll(materias);
-		return resultado;
-	}
 }

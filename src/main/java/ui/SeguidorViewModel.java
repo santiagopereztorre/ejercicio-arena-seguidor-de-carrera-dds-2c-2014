@@ -8,12 +8,13 @@ import org.uqbar.commons.utils.Observable;
 
 import domain.Materia;
 import domain.MateriasHome;
+import domain.MateriasHomeComun;
 
 @Observable
 public class SeguidorViewModel {
 	
 	public List<Materia> getResultados() {
-		return MateriasHome.getInstance().getAll();
+		return MateriasHome.getInstance().allInstances();
 	}
 
 	public void navegar(WindowOwner parent) {

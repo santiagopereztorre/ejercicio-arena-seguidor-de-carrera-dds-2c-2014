@@ -4,6 +4,7 @@ import org.uqbar.commons.utils.Observable;
 
 import domain.Materia;
 import domain.MateriasHome;
+import domain.MateriasHomeComun;
 
 @Observable
 public class NuevaMateriaViewModel {
@@ -18,7 +19,7 @@ public class NuevaMateriaViewModel {
 	}
 	
 	public void crear() {
-		MateriasHome.getInstance().add(new Materia(nombre));
+		MateriasHome.getInstance().create(new Materia(nombre));
 	}
 
 	public void cerrar(NuevaMateriaView nuevaMateriaView) {
